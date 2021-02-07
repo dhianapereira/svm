@@ -1,0 +1,42 @@
+<html>
+
+<head>
+    <title>SVM</title>
+    <link rel="shortcut icon" href="#" type="image/x-icon" />
+    <link type="text/css" href="./jqueryui/css/ui-lightness/jquery-ui-1.8.21.custom.css" rel="Stylesheet" />
+    <script type="text/javascript" src="./jqueryui/js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="./jqueryui/js/jquery-ui-1.8.21.custom.min.js"></script>
+    <script src="./npg_include/npgmain.js"></script>
+    <script src="../src/svm.js"></script>
+    <script src="./scripts/script.js"></script>
+    <link type="text/css" href="./styles/style.css" rel="Stylesheet" />
+</head>
+
+<body onLoad="NPGinit(10);">
+    <header>
+        <h1>Suporte a máquina de vetores em Javascript</h1>
+    </header>
+
+    <p>
+        <b>mouse click</b>: add red data point<br />
+        <b>shift + mouse click</b>: add green data point<br />
+        <b>'k'</b>: toggle between Linear and Rbf kernel<br />
+        <b>'r'</b>: reset<br />
+    </p>
+
+    <canvas id="NPGcanvas" width="500" height="500">Browser not supported for Canvas. Get a real
+        browser.</canvas><br /><br />
+
+    <div id="svm">
+        <div style="width: 230px; float: left; margin-left: 10px">
+            <div id="slider1"></div>
+            <br /><span id="creport">C = 1.0</span>
+        </div>
+        <div style="width: 230px; float: right; margin-right: 10px">
+            <div id="slider2"></div>
+            <br /><span id="sigreport">RBF Kernel sigma = 1.0</span>
+        </div>
+    </div>
+</body>
+
+</html>
