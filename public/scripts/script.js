@@ -8,14 +8,19 @@ function loadData() {
       var labels = [];
       var labels = json;
 
-      const training = data.splice(0, 47);
+      const training = data.splice(0, 40);
       const test = data;
-      
-      const trainingLabels = labels.splice(0, 47);
+
+      console.log(training);
+
+      const trainingLabels = labels.splice(0, 40);
       //const testLabels = labels;
 
+      //console.log(testLabels);
+
       svm = new svmjs.SVM();
-      svm.train(training, trainingLabels, { C: 1.0 });
+
+      svm.train(training, trainingLabels, {C: 1.0});
 
       result = svm.predict(test);
 
