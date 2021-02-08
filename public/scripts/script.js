@@ -12,7 +12,7 @@ function loadData() {
       const test = data;
       
       const trainingLabels = labels.splice(0, 47);
-      const testLabels = labels;
+      //const testLabels = labels;
 
       svm = new svmjs.SVM();
       svm.train(training, trainingLabels, { C: 1.0 });
