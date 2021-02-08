@@ -1,27 +1,39 @@
-canvas {
-  border: 1px solid #555;
-  margin-top: 10px;
-}
-body {
-  text-align: center;
-  font-family: Verdana, Helvetica, sans-serif;
-  font-size: 12px;
-  padding: 0;
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-h1 {
-  margin-top: 2rem;
+body {
+  height: 100vh;
+  color: #000;
+  background: #f0f2f5;
+  font-family: "Poppins", sans-serif;
+}
+
+:root {
   font-size: 1.8rem;
 }
 
-p {
-  padding-top: 0;
-  padding-bottom: 0;
+header {
+  background: #095379;
+  text-align: center;
+  padding: 1rem 0 2rem;
 }
 
-#svm {
-  width: 500px;
-  margin-left: auto;
-  margin-right: auto;
+.container {
+  width: min(90vw, 800px);
+
+  margin: auto;
+}
+
+#info {
+  margin-top: -2rem;
+  color: #fff;
+  font-size: .6rem;
+}
+
+#result {
+  margin-top: 1rem;
+  width: 100%;
 }
