@@ -19,7 +19,7 @@ header {
   color: #fff;
   background: #095379;
   text-align: center;
-  padding: 2rem 0 10rem;
+  padding: 2rem 0 7rem;
 }
 
 .container {
@@ -29,7 +29,7 @@ header {
 }
 
 #info {
-  margin-top: -8rem;
+  margin-top: -6rem;
   color: #fff;
 }
 
@@ -38,6 +38,16 @@ header {
   width: 100%;
   display: block;
   overflow-x: auto;
+}
+
+#comments{
+  margin-top: 2rem;
+  margin-left: 2rem;
+}
+
+a{
+  text-decoration: none;
+  color: #095379;
 }
 
 @media (min-width: 800px) {

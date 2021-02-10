@@ -6,9 +6,12 @@
     <link rel="shortcut icon" href="#" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SVM</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,400;1,700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <link rel="stylesheet" href="./styles/table.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="../src/svm.js"></script>
     <script src="./scripts/script.js"></script>
@@ -27,7 +30,45 @@
       </section>
       <section id="result">
         <h2>Resultado</h2>
-        <p id="testLabels"></p>
+        <table>
+          <tr>
+            <th>Paciente 1</th>
+            <th>Paciente 2</th>
+            <th>Paciente 3</th>
+            <th>Paciente 4</th>
+            <th>Paciente 5</th>
+            <th>Paciente 6</th>
+            <th>Paciente 7</th>
+            <th>Paciente 8</th>
+            <th>Paciente 9</th>
+            <th>Paciente 10</th>
+          </tr>
+          <tr id="testLabels"></tr>
+        </table>
+      </section>
+      <section id="comments">
+        <p>
+          A taxa de acerto do modelo SVM foi de 80%, sendo 20% maior do que o
+          modelo da Árvore de decisão (<a
+            href="
+          https://github.com/dhianaslv/decision-tree"
+            >Repositório no Github</a
+          >), que obteve 60% como taxa de acerto.
+        </p>
+        <br>
+        <p>
+          Isso ocorre devido a algumas características do SVM, como :
+          <ul>
+            <li>Em caso de outlier a SVM busca a melhor forma possível de classificação e, se necessário, desconsidera o outlier;</li>
+            <li>Não funciona bem em conjuntos de dados muito grandes;</li>
+            <li>Se as classes estiverem muito sobrepostas deve-se utilizar apenas evidências independentes (devido ao fato de não ser muito bom com dados com muitos ruídos).</li>
+          </ul>
+        </p>
+        <br>
+        <p>
+          Já a Árvore de decisão necessita de uma quantidade maior de dados para aumentar sua precisão. Então quando há um outlier, um dado que se afasta muito dos padrões do conjunto de dados, ela o classifica como um dos padrões, diferente do SVM. 
+        </p>
+        <br>
       </section>
     </main>
   </body>
