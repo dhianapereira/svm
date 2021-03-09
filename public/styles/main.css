@@ -19,7 +19,7 @@ header {
   color: #fff;
   background: #095379;
   text-align: center;
-  padding: 2rem 0 7rem;
+  padding: 2rem 0 15rem;
 }
 
 .container {
@@ -29,25 +29,22 @@ header {
 }
 
 #info {
-  margin-top: -6rem;
+  margin-top: -15rem;
   color: #fff;
+  text-align: justify;
 }
 
-#result {
-  margin-top: 7rem;
-  width: 100%;
-  display: block;
-  overflow-x: auto;
-}
-
-#comments{
-  margin-top: 2rem;
+#result{
+  margin-top: 1rem;
   margin-left: 2rem;
+  background-color: #fff;
+  border-radius: 2rem;
+  padding: 2rem 3rem;
 }
 
 a{
   text-decoration: none;
-  color: #095379;
+  color: #000;
 }
 
 @media (min-width: 800px) {

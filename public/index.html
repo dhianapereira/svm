@@ -1,75 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="shortcut icon" href="#" type="image/x-icon" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SVM</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles/main.css" />
-    <link rel="stylesheet" href="./styles/table.css" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="../src/svm.js"></script>
-    <script src="./scripts/script.js"></script>
-  </head>
+<html>
 
-  <body onload="loadData();">
-    <header>
-      <h1>SVM</h1>
-    </header>
-    <main class="container">
-      <section id="info">
-        <p>
-          O total de dados é de 50 pacientes, sendo 40 para o treinamento do
-          modelo e 10 para o teste.
-        </p>
-      </section>
-      <section id="result">
-        <h2>Resultado</h2>
-        <table>
-          <tr>
-            <th>Paciente 1</th>
-            <th>Paciente 2</th>
-            <th>Paciente 3</th>
-            <th>Paciente 4</th>
-            <th>Paciente 5</th>
-            <th>Paciente 6</th>
-            <th>Paciente 7</th>
-            <th>Paciente 8</th>
-            <th>Paciente 9</th>
-            <th>Paciente 10</th>
-          </tr>
-          <tr id="testLabels"></tr>
-        </table>
-      </section>
-      <section id="comments">
-        <p>
-          A taxa de acerto do modelo SVM foi de 80%, sendo 20% maior do que o
-          modelo da Árvore de decisão (<a
-            href="
-          https://github.com/dhianaslv/decision-tree"
-            >Repositório no Github</a
-          >), que obteve 60% como taxa de acerto.
-        </p>
-        <br>
-        <p>
-          Isso ocorre devido a algumas características do SVM, como :
-          <ul>
-            <li>Em caso de outlier a SVM busca a melhor forma possível de classificação e, se necessário, desconsidera o outlier;</li>
-            <li>Não funciona bem em conjuntos de dados muito grandes;</li>
-            <li>Se as classes estiverem muito sobrepostas deve-se utilizar apenas evidências independentes (devido ao fato de não ser muito bom com dados com muitos ruídos).</li>
-          </ul>
-        </p>
-        <br>
-        <p>
-          Já a Árvore de decisão necessita de uma quantidade maior de dados para aumentar sua precisão. Então quando há um outlier, um dado que se afasta muito dos padrões do conjunto de dados, ela o classifica como um dos padrões, diferente do SVM. 
-        </p>
-        <br>
-      </section>
-    </main>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="shortcut icon" href="#" type="image/x-icon" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SVM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,400;0,700;1,400;1,700&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="./styles/main.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="../src/svm.js"></script>
+  <script src="./scripts/script.js"></script>
+</head>
+
+<body onload="loadData();">
+  <header>
+    <h1>SVM</h1>
+  </header>
+  <main class="container">
+    <section id="info">
+      <p>
+        São 500 pacientes no total, sendo 262 (52,4%) com casos de tumores benignos e 238 (47,6%) com casos de tumores
+        malignos. Para o treinamento foram utilizados 80% dos dados, sendo 40% de casos de tumores benignos e 40% de
+        tumores malignos, e para o teste os 20% restante. Destes 20%, 12,4% são de tumores benignos e 7,6% são de
+        tumores malignos.
+      </p>
+    </section>
+    <section id="result">
+      <h2>Resultado</h2>
+      <p>
+        A taxa de acerto do modelo SVM foi de <strong id="percentage"></strong>. Veja a porcentagem de acerto da Árvore
+        de decisão que utiliza o mesmo conjunto de dados, e verifique a diferença na taxa de acerto dos dois modelos <strong><a
+          href="
+          https://github.com/dhianaslv/decision-tree">(Repositório no Github da Árvore de decisão)</a></strong>
+      </p>
+      <br>
+      <h2>Características do SVM</h2>
+      <p>
+      <ul>
+        <li>Em caso de outlier a SVM busca a melhor forma possível de classificação e, se necessário, desconsidera o
+          outlier;</li>
+        <li>Não funciona bem em conjuntos de dados muito grandes;</li>
+        <li>Se as classes estiverem muito sobrepostas deve-se utilizar apenas evidências independentes (devido ao fato
+          de não ser muito bom com dados com muitos ruídos).</li>
+      </ul>
+      </p>
+    </section>
+  </main>
+</body>
+
 </html>

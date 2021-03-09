@@ -1,7 +1,7 @@
 function loadData() {
   var data = [];
 
-  $.getJSON("../src/data/data.json", function (json) {
+  $.getJSON("../src/data/breast-cancer.json", function (json) {
     data = json;
 
     $.getJSON("../src/data/labels.json", function (json) {
@@ -9,12 +9,15 @@ function loadData() {
       var labels = json;
 
       var columns = [
-        "age",
-        "menopause",
-        "tumorSize",
-        "degMalig",
-        "breast",
-        "breastQuad",
+        "clumpThickness",
+        "uniformityOfCellSize",
+        "uniformityOfCellShape",
+        "marginalAdhesion",
+        "singleEpithelialCellSize",
+        "bareNuclei",
+        "blandChromatin",
+        "normalNucleoli",
+        "mitoses",
       ];
 
       var result = data.map(function (obj) {
@@ -23,25 +26,26 @@ function loadData() {
         });
       });
 
-      const training = result.splice(0, 40);
+      const training = result.splice(0, 400);
+      console.log("Dados para o treinamento: ");
       console.log(training);
 
       const test = result;
+      console.log("Dados para o teste: ");
+      console.log(test);
 
-      const trainingLabels = labels.splice(0, 40);
+      const trainingLabels = labels.splice(0, 400);
 
-      var wb; // weights and offset structure
+      //var wb; // weights and offset structure
       var svm = new svmjs.SVM();
       var svmC = 1.0;
 
-      var trainstats = svm.train(training, trainingLabels, {
+      svm.train(training, trainingLabels, {
         kernel: svmjs.linearKernel,
         C: svmC,
       });
 
-      console.log(trainstats);
-
-      if (console) {
+      /*if (console) {
         // print weights and offset
         wb = svm.getWeights();
         for (var i = 0; i < wb.w.length; i++) {
@@ -54,18 +58,25 @@ function loadData() {
         for (var i = 0; i < N; i++) {
           console.log("%f, %f", labels[i], marg[i]);
         }
-      }
+      }*/
 
       testLabels = svm.predict(test);
       margins = svm.margins(test);
 
-      console.log(testLabels);
-      console.log(margins);
+      //console.log(testLabels);
+      //console.log(margins);
 
-      testLabels.forEach(function (label) {
-        document.getElementById("testLabels").innerHTML +=
-          "<td>" + label + "</td>";
-      });
+      let counter = 0;
+      for (let i = 0; i < labels.length; i++) {
+        if (labels[i] == testLabels[i]) {
+          counter++;
+        }
+      }
+
+      const percentage = (counter * 100) / testLabels.length;
+      console.log("Porcentagem de acerto:" + percentage + "%");
+
+      document.getElementById("percentage").innerHTML = percentage + "%";
     });
   });
 }
